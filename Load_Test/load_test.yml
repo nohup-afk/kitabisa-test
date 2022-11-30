@@ -1,0 +1,29 @@
+config:
+  target: 'https://reqres.in'
+  phases:
+    - duration: 1
+      arrivalRate: 1
+      name: Warm up
+    - duration: 120
+      arrivalRate: 1
+      rampTo: 10
+      name: Ramp up 10 VUs
+    - duration: 120
+      arrivalRate: 10
+      name: Sustained load 10 VUs
+  ensure:
+    p99: 150
+    maxErrorRate: 1
+  plugins:
+    expect: {}
+
+scenarios:
+  - name: "request deposit"
+    flow:
+    - post:
+        url: "/api/register"
+        json:
+          email: "eve.holt@reqres.in"
+          password: "pistol"
+        expect:
+          - statusCode: 200
