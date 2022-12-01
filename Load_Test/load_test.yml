@@ -18,7 +18,7 @@ config:
     expect: {}
 
 scenarios:
-  - name: "request deposit"
+  - name: "register user"
     flow:
     - post:
         url: "/api/register"
