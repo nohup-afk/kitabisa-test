@@ -45,24 +45,30 @@ Windows CLI #
     chromedriver.exe -v
 
 How to run Script
+
     cd /UI_Test 
     robot register.robot 
 
 ### Windows user
 *To install Node JS, run the following command from the command line or from PowerShell:
+
     choco install nodejs
 
 verify installation
+
     node -v
     npm -v
 
 Install Artillery
+
     npm install -g artillery@latest
 
 verify installation
+
     artillery dino
 
 How to run Script
+
     cd /Load_test
     artillery run load_test.yml
 
